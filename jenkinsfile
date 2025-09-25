@@ -1,8 +1,9 @@
 pipeline {
-    agent {label 'Slave1'}
+    agent none
 
     stages {
         stage('Testing') {
+            agent {label 'Slave1'}
             steps {
                 sh '''
                 pwd
@@ -12,6 +13,7 @@ pipeline {
         }
 
         stage('Resting') {
+            agent {label 'Slave2'}
             steps {
                 sh '''
                 sleep 5
@@ -20,4 +22,11 @@ pipeline {
         }
     }
 }
+
+
+
+
+
+
+
 
