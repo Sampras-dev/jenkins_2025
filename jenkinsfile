@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Testing') {
+            steps {
+                sh '''
+                pwd
+                ls -ltr
+                '''
+            }
+        }
+
+        stage('Resting') {
+            steps {
+                sh '''
+                sleep 5
+                '''
+            }
+        }
+    }
+}
+
